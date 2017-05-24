@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
+var cors = require('cors');
 
 
 
@@ -13,6 +13,8 @@ var cookieSession = require('cookie-session');
 var config = require('config');
 
 var app = express();
+app.use(cors());
+app.options('*', cors());
 
 
 var db = config.get('db');
